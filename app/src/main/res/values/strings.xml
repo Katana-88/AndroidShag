@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="days_by_city">16 day / daily forecast</string>
+    <string name="hours_by_city">5 day / 3 hour forecast</string>
+    <string name="current_by_city">Current</string>
+    <string name="city_name">City name</string>
+    <string name="go">GO!</string>
+    <string name="OPEN_WEATHER_MAP_API_KEY">62659a3482f19a0e381f18ad42621d5c</string>
 </resources>

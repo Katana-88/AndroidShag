@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llfrafment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_curr_min_temp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="20dp"
+            android:background="#18E6FF"
+            android:padding="5dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tv_curr_max_temp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="20dp"
+            android:background="#FF1855"
+            android:padding="5dp"
+            android:text="" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Description:"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tv_curr_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Wind:" />
+            <TextView
+                android:id="@+id/tv_curr_wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_margin="5dp"
+                android:text="" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,98 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llmain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical">
-   
-    <TextView
-        android:id="@+id/city"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Херсон" />
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#FAE3B2"
-        android:orientation="vertical">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/text_city"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="10dp"
-                android:background="#18E6FF"
-                android:padding="5dp"
-                android:text="+19" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="10dp"
-                android:background="#FF1855"
-                android:padding="5dp"
-                android:text="+23" />
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center"
-                    android:text="Переменная облачность" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Влажность 65%" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Ветер ССЗ: 7 км/ч" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="#EFD334"
-        android:orientation="vertical">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:text="Kherson" />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:text="Country: "
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="@id/text_country"
+            app:layout_constraintRight_toLeftOf="@id/text_country"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/days"
-                app:layoutManager="LinearLayoutManager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/city"/>
-
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/text_country"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:text="Hello World!"
+            app:layout_constraintTop_toBottomOf="@+id/text_city"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
     </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="2dp"></Space>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="#a5c0df"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+    <RadioGroup
+        android:id="@+id/radios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/current"
+        android:padding="10dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_city">
+
+        <RadioButton
+            android:id="@+id/current"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/current_by_city" />
+
+        <RadioButton
+            android:id="@+id/hours"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/hours_by_city" />
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/days"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/days_by_city" />-->
+    </RadioGroup>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/flFragmentContainer">
+    </FrameLayout>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Wind Speed: "-->
+<!--        app:layout_constraintTop_toTopOf="@id/text_wind"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/text_wind"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_wind"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Hello World!"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_country"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Temperature: "-->
+<!--        app:layout_constraintTop_toTopOf="@id/text_temp"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/text_temp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_temp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Hello World!"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_wind"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"/>-->
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Description: "-->
+<!--        app:layout_constraintTop_toTopOf="@id/text_description"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/text_description"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_description"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="Hello World!"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_temp"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"/>-->
+
+
+
+
+
+
+<!--   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:background="#EFD334"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/dayslist"-->
+<!--                app:layoutManager="LinearLayoutManager"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/city"/>-->
+
+
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
 </LinearLayout>
